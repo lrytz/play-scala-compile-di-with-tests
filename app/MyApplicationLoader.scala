@@ -51,8 +51,9 @@ class MyComponents(context: ApplicationLoader.Context)
       messagesApi
   }
 
-  lazy val router: Router = new Routes(httpErrorHandler, homeController, assets)
+  lazy val router: Router = new Routes(httpErrorHandler, homeController, assets, javaController)
 
   lazy val homeController = new controllers.HomeController()
   lazy val assets = new controllers.Assets(httpErrorHandler)
+  lazy val javaController = new controllers.JavaController()
 }
